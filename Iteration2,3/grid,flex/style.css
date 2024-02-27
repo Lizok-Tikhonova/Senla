@@ -38,6 +38,8 @@ body{
 
     font-family: "Roboto", sans-serif;
     font-size: 18px;
+
+    position: relative;
 }
 
 nav{
@@ -47,6 +49,10 @@ nav{
     flex-direction: column;
     row-gap: 70px;
     padding: 40px 0;
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
 
     background-color: rgb(151, 214, 250);
 }
@@ -298,6 +304,8 @@ input:not(input[type=radio]):focus{
         padding: 20px 50px;
         justify-content: space-between;
         row-gap: 30px;
+
+        height: max-content;
     }
 
     .nav-list__item{

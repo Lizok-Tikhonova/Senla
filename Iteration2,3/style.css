@@ -13,9 +13,11 @@ img{
     max-width: 100%;
     border-radius: 3px;
 }
+
 a{
     color: black;
 }
+
 p{
     font-size: 20px;
 }
@@ -24,7 +26,6 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 2fr) 1fr;
     grid-template-rows: 250px 1fr;
-    /* gap: 10px; */
     grid-template-areas: 
         "header header nav"
         "main main nav";
@@ -35,13 +36,12 @@ body{
     font-size: 18px;
 }
 
-
 nav{
     grid-area: nav;
 
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    row-gap: 70px;
     padding: 40px 0;
 
     background-color: rgb(151, 214, 250);
@@ -71,12 +71,21 @@ nav{
 }
 
 .item--active{
-    background-color:rgb(53, 144, 0);
-}
-.a--active{
-    color: white;
+    position: relative;
 }
 
+.item--active::after{
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 100%;
+
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(53, 144, 0);
+}
 
 
 header{
@@ -85,8 +94,7 @@ header{
     flex-direction: column;
     gap: 15px;
     align-items: start;
-    padding: 40px;
-    /* text-align: center; */
+    padding: 50px;
 
     background-image: url('./img/Sakhalin.jpg');
     background-repeat: no-repeat;
@@ -112,19 +120,19 @@ header{
 
 main{
     grid-area: main;
-    padding: 40px;
+    padding: 50px;
     display: flex;
     column-gap: 70px;
+    row-gap: 70px;
 
     background-color: aliceblue;
-
-    
 }
 
 .infoSahal{
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    column-gap: 100px;
+    row-gap: 70px;
     max-width: 75%;
 }
 
@@ -133,6 +141,7 @@ main{
     column-gap: 45px;
     align-items: center;
 }
+
 .about__img{
     max-width: 45%;
 }
@@ -141,6 +150,7 @@ main{
     display: flex;
     align-items: center;
     column-gap: 50px;
+    row-gap: 20px;
 }
 
 .request__desc{
@@ -150,9 +160,6 @@ main{
     max-width: 50%;
 }
 
-.request__form{
-    
-}
 .request__form, .form_input_radio > label{
     font-size: 12px;
     color: rgb(70, 70, 70);
@@ -166,11 +173,13 @@ main{
     border: 1px solid rgb(149, 149, 149);
     border-radius: 7px;
 }
+
 .form_input_radio__list{
     display: flex;
     gap: 15px;
     margin: 10px 0 20px 0;
 }
+
 .input_item_radio{
     margin-bottom: 15px;
     margin-right: 5px;
@@ -186,7 +195,6 @@ main{
     padding: 12px 18px;
     cursor: pointer;
     background-color: rgb(53, 144, 0);
-    /* border-radius: 5px; */
     border: none;
     border-radius: 3px;
     font-size: 12px;
@@ -207,6 +215,7 @@ main{
     flex-grow: 1;
     border: 1px solid black;
 }
+
 .cardsAttractions__card img{
    height: 85%;
 }
@@ -214,4 +223,68 @@ main{
 .card__title{
     margin: 7px;
     font-size: 16px;
+}
+
+
+@media (max-width:1280px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+
+        grid-template-areas: 
+            "nav"
+            "header"
+            "main"
+        ;
+    }
+
+    header{
+        background: aliceblue;
+    }
+
+    nav, .nav-list, .cardsAttractions{
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    nav{
+        padding: 20px 50px;
+        justify-content: space-between;
+        row-gap: 30px;
+    }
+
+    .nav-list__item{
+        padding: 10px;
+    }
+
+    main{
+      flex-direction: column;
+    }
+
+    .cardsAttractions{
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    .cardsAttractions__card{
+        width:250px;
+        flex-grow: 0;
+    }
+
+    .info{
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .infoSahal{
+        max-width: 100%;
+    }
+
+    .request{
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 }

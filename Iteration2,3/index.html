@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Liza Tihonova">
+    <meta name="description" content="Internship website, the topic is a trip to Sakhalin">
+    <title>Internship</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="./index.html" class="logo">
+            <strong>Sahalin</strong>Tur
+        </a>
+
+        <ul class="nav-list">
+            <li class="nav-list__item">
+                <a href="#" class="nav-list__link">Достопримечательности</a>
+            </li>
+            <li class="nav-list__item">
+                <a href="#" class="nav-list__link">Экскурсии</a>  
+            </li>
+            <li class="nav-list__item">
+                <a href="#" class="nav-list__link">Контакты</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="header__title">Добро пожаловать на Cахалин</h1>
+        <p class="header__description">Сахалинская область расположена на Дальнем Востоке Российской Федерации, у восточных берегов Евразийского материка в переходной зоне от континента к Тихому океану. Граничит с Камчатским, Хабаровским и Приморским краями, на юге - с Японией.</p>
+        <button class="header__button" type="button">Заказать экскурсию</button>
+    </header>
+    <main>
+        <section class="about">
+            <h2 class="about__title">О Сахалине</h2>
+            <div class="info">
+                <p class="about__desc"><strong>Сахалинская область</strong> – <strong><em>единственный в стране</em></strong> островной регион, расположенный на 87 островах и включающий в себя остров Сахалин с прилегающими к нему территориями островов Уш, Зенковича, Монерон, Тюлений и две гряды Курильских островов (Большой и Малой).
+                    Основным климатообразующим фактором на Сахалине служат окружающие его Охотское и Японское моря. Их влияние выражается в смягчении зимних холодов, особенно в прибрежных районах, в обилии зимних осадков, делающих остров одним из наиболее многоснежных районов России, в муссонном характере ветров и очень высокой влажности воздуха.
+                </p>
+                <img src="./img/Sakhalin.jpg" alt="Sahalin" class="about__img">
+            </div>
+        </section>
+        <section class="population">
+            <h2 class="population__title">Население</h2>
+            <table class="population__table">
+                <thead>
+                    <tr>
+                        <th>Город</th>
+                        <th>Население</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Южно-Сахалинск</td>
+                        <td>200 235</td>
+                    </tr>
+                    <tr>
+                        <td>Корсаков</td>
+                        <td>33 451</td>
+                    </tr>
+                    <tr>
+                        <td>Холмск</td>
+                        <td>27 500 </td>
+                    </tr>
+                    <tr>
+                        <td>Оха</td>
+                        <td>20 000</td>
+                    </tr>
+                    <tr>
+                        <td>Поронайск</td>
+                        <td>15 000</td>
+                    </tr>
+                    <tr>
+                        <td>Доблинск</td>
+                        <td>11 500</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Среднее население:</th>
+                        <th>51 000</th>
+                    </tr>
+                  </tfoot>
+            </table>
+        </section>
+        <section class="request">
+            <h2 class="request__desc_title">Заказать экскурсию</h2>
+            <div class="request__desc">
+                <p class="request__desc_slogan">Оформи заявку на экскурсию сейчас и получи <strong>специальную скидку <em>15%</em></strong>. Чтобы воспользоваться этим предложением, пожалуйста, заполните форму. Мы обязательно с вами свяжемся и предложим возможные экскурсии!</p>
+            </div>
+            <form action="" class="request__form">
+                <label for="fname" class="fname-text">Имя:</label><br>
+                <input type="text" id="fname" name="fname" class="fname" placeholder="имя"><br>
+
+                <label for="sname" class="fname-text">Фамилия:</label><br>
+                <input type="text" id="sname" name="sname" class="sname" placeholder="фамилия"><br>
+
+                <label for="tel" class="tel-text">Телефон:</label><br>
+                <input type="tel" id="tel" name="tel" class="tel" placeholder="+7 000 000 00 00"><br>
+
+                <label for="email" class="email-text">Почта:</label><br>
+                <input type="email" id="email" name="email" class="email" placeholder="email@gmail.com"><br>
+
+                <label for="date" class="date-text">Выберите удобную дату:</label><br>
+                <input type="date" id="date" name="date" class="date"><br>
+
+                <label for="date" class="date-text">Выберите город или воспользуйтесь поиском:</label><br>
+                <input type="search" class="excursions__search" list="city" placeholder="Найти город">
+                <datalist id="city">
+                    <option value="Холмск">
+                    <option value="Оха">
+                    <option value="Долинск">
+                </datalist>
+
+                <div class="form_input_radio">
+                    <label class="form_input_radio_label">Выберите способ передвижения:</label>
+                    <div class="form_input_radio__list">
+                        <label><input type="radio" class="input_item_radio" name="new" value="Трансфер">Пешая</label>
+                        <label><input type="radio" class="input_item_radio" name="new" value="Аудиогид">Транспортная</label>
+                    </div>
+                </div>
+
+                <label for="mess" class="mess-text">Добавте пожелания по экскурсии:</label><br>
+                <textarea id="mess" name="mess" class="mess" rows="8" cols="30"></textarea><br>
+
+                <div class="request__form_buttons">
+                    <button type="reset" class="">Очистить</button>
+                    <button type="submit" class="">Отправить</button>
+                  </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p class="author">Сайт разработала стажерка IT сомпании "СЕНЛА" Тихонова Елизавета</p>
+        <span class="telegramm">Ссылка на телеграмм:</span>
+        <a href="https:t.me/LizokTihonova" class="telegram">@LizokTihonova</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1.5fr;
+    grid-template-rows: 260px repeat(3, 1fr);
+    grid-template-areas: 
+        "header header header nav"
+        "card1 main main nav"
+        "card2 main main nav"
+        "card3 main main nav";
+    gap: 15px;
+}
+
+nav{
+    grid-area: nav;
+    border: 2px solid yellow;
+}
+
+.card1,.card2,.card3{
+    height: 90%;
+    width: 200px;
+}
+
+/* aside:not(.card3){
+    margin-bottom: 40px;
+} */
+
+.card1{
+    align-self: flex-start;
+}
+
+.card2{
+    align-self:center;
+}
+
+.card3{
+    align-self: flex-end;
+}
+
+header{
+    grid-area: header;
+    border: 2px solid red;
+}
+
+main{
+    grid-area: main;
+    border: 2px solid palevioletred;
+}
+
+.card1{
+    grid-area: card1;
+    border: 2px solid green;
+}
+
+.card2{
+    grid-area: card2;
+    border: 2px solid green;
+}
+
+.card3{
+    grid-area: card3;
+    border: 2px solid green;
+}
+
+@media (max-width:1280px) {
+    body{
+        grid-template-columns: repeat(3, 1fr) ;
+        grid-template-rows: 100px repeat(3, 1fr);
+
+        grid-template-areas: 
+            "nav nav nav"
+            "header header header"
+            "card1 card2 card3"
+            "main main main"
+        ;
+    }
+    .card1,.card2,.card3{
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+
+
+
+
+

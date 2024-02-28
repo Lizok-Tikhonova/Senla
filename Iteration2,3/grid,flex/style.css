@@ -251,6 +251,7 @@ input:not(input[type=radio]):focus{
     display: flex;
     flex-direction: column;
     gap: 40px;
+
 }
 
 .cardsAttractions__card{

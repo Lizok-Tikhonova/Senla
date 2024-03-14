@@ -17,5 +17,42 @@
         <p class="result" class="result">Результат = </p>
     </form>
 
+    <div class="containerText" style="color:red; border:2px solid black; padding: 20px;">
+        Изменение контента
+    </div>
+
+    <div class="containerColor" style="background-color: lightcoral; padding: 20px;" onclick=Message()>
+       КЛИК, НАВЕДЕНИЕ, ОТВЕДЕНИЕ
+    </div>
+
+    <script>
+        let containerColor = document.querySelector('.containerColor')
+
+        function changeColorText(color1, color2){
+            let containerText = document.querySelector('.containerText')
+            setInterval(()=>{
+                if(containerText.style.color==color1) {
+                    containerText.style.color = color2;
+                    containerText.textContent = 'Изменение контента: ЦВЕТ 1'
+                } else {
+                    containerText.style.color = color1;
+                    containerText.textContent = 'Изменение контента: ЦВЕТ 2'
+                }
+            }, 2000)
+        }
+        changeColorText('blue', 'red')
+       
+        function Message(){
+            alert("Ура, нажатие!!")
+        }
+        
+        containerColor.addEventListener('mouseover',(e)=>{
+            containerColor.textContent = 'Наведение'
+        })
+        containerColor.addEventListener('mouseout',(e)=>{
+            containerColor.textContent = 'Снятие курсора'
+        })
+
+    </script>
 </body>
 </html>

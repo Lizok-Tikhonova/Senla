@@ -1,7 +1,7 @@
 
 let button = document.querySelector('.ok')
 
-button.onclick = (e)=>{
+button.addEventListener('click', (e) => {
     // e.preventDefault()
     let result = document.querySelector('.result')
     let num1 = +document.querySelector('.num1').value
@@ -28,10 +28,9 @@ button.onclick = (e)=>{
     } catch(e){
         alert('Error: '+ e.message)
     }
-    
+
     //  else {
     //     alert('Введите числа')
     //     result.textContent =  `Результат`
-    // }
-       
-}
+    // }    
+})

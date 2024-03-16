@@ -10,20 +10,20 @@
 </head>
 <body>
 
-    <form class="form"style="border: 5px red solid;">
+    <form class="form">
         <h3>Арифметические операции с числами</h3>
         <input type="number" placeholder="Первое число" class="num1">
-        <input type="text" placeholder="+-*/" class="symbol" style="width: 2em;">
+        <input type="text" placeholder="+-*/" class="symbol">
         <input type="number" placeholder="Второе число" class="num2">
         <button class="ok" type="reset">посчитать</button>
         <p class="result" class="result">Результат = </p>
     </form>
 
-    <div class="containerText" style="color:red; border:2px solid black; padding: 20px;">
+    <div class="containerText">
         Изменение контента
     </div>
 
-    <div class="containerColor" style="background-color: lightcoral; padding: 20px;" onclick="Message('Ура, нажатие')">
+    <div class="containerColor" onclick="Message('Ура, нажатие')">
        КЛИК, НАВЕДЕНИЕ, ОТВЕДЕНИЕ
     </div>
 
@@ -54,10 +54,10 @@
         }
         
         containerColor.addEventListener('mouseover',(e)=>{
-            containerColor.textContent = 'Наведение'
+            containerColor.textContent = 'Наведение (попробуй нажать)'
         })
         containerColor.addEventListener('mouseout',(e)=>{
-            containerColor.textContent = 'Снятие курсора'
+            containerColor.textContent = 'Снятие курсора (попробуй нажать)'
         })
         
         inputs.forEach((input) => {

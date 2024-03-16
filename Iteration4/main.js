@@ -1,5 +1,5 @@
 
-let button = document.querySelector('.ok')
+const button = document.querySelector('.ok')
 
 button.addEventListener('click', (e) => {
     // e.preventDefault()
@@ -13,24 +13,25 @@ button.addEventListener('click', (e) => {
             result.textContent =  `Результат`
             throw new Error("Введены не числа");  
         }
-            if(symbol == '+'){
-                result.textContent =  `Результат ${num1+num2}`
-            } else if(symbol == '-'){
-                result.textContent =  `Результат ${num1-num2}`
-            } else if(symbol == '*'){
-                result.textContent =  `Результат ${num1*num2}`
-            } else if(symbol == '/'){
-                result.textContent =  `Результат ${num1/num2}`
-            } else{
-                alert('Считаются только арифметические операции')
-                result.textContent =  `Результат = `
-            }   
-    } catch(e){
+        if(symbol == '+'){
+            result.textContent =  `Результат ${num1+num2}`
+        } else if(symbol == '-'){
+            result.textContent =  `Результат ${num1-num2}`
+        } else if(symbol == '*'){
+            result.textContent =  `Результат ${num1*num2}`
+        } else if(symbol == '/'){
+            result.textContent =  `Результат ${num1/num2}`
+        } else{
+            alert('Считаются только арифметические операции')
+            result.textContent =  `Результат = `
+        }   
+    } catch(e) {
         alert('Error: '+ e.message)
     }
-
-    //  else {
-    //     alert('Введите числа')
-    //     result.textContent =  `Результат`
-    // }    
 })
+
+
+//Работа со cтроками
+let strName = prompt('Как вас зовут?')
+let strMovie = prompt('Ваш любимый фильм?')
+alert(`Тебя зовут ${strName}. ` + `Твой любимый фильм '${strMovie}'`)

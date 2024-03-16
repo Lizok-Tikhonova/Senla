@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JSBasic</title>
+    <link rel="stylesheet" href="style.css">
     <script src="./main.js" defer></script>
 </head>
 <body>
+
     <form class="form"style="border: 5px red solid;">
         <h3>Арифметические операции с числами</h3>
         <input type="text" placeholder="Первое число" class="num1">
@@ -21,12 +23,17 @@
         Изменение контента
     </div>
 
-    <div class="containerColor" style="background-color: lightcoral; padding: 20px;" onclick=Message()>
+    <div class="containerColor" style="background-color: lightcoral; padding: 20px;" onclick="Message('Ура, нажатие')">
        КЛИК, НАВЕДЕНИЕ, ОТВЕДЕНИЕ
     </div>
 
+    <a href="https://web.telegram.org" onclick="event.preventDefault()">Я ссылка без стандартного действия</a>
+
+
     <script>
-        let containerColor = document.querySelector('.containerColor')
+        const containerColor = document.querySelector('.containerColor')
+        const form = document.querySelector('.form')
+        const inputs = document.querySelectorAll('input')
 
         function changeColorText(color1, color2){
             let containerText = document.querySelector('.containerText')
@@ -42,8 +49,8 @@
         }
         changeColorText('blue', 'red')
        
-        function Message(){
-            alert("Ура, нажатие!!")
+        function Message(mess){
+            alert(mess)
         }
         
         containerColor.addEventListener('mouseover',(e)=>{
@@ -51,6 +58,15 @@
         })
         containerColor.addEventListener('mouseout',(e)=>{
             containerColor.textContent = 'Снятие курсора'
+        })
+        
+        inputs.forEach((input) => {
+            input.addEventListener('focus', (e)=>{ 
+                input.style.outline = '2px solid red'
+            })
+            input.addEventListener('blur', (e)=>{
+                input.style.outline = ''
+            })
         })
 
     </script>

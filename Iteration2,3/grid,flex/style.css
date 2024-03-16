@@ -109,6 +109,7 @@ nav{
     animation: line 1.5s;
 }
 
+
 @keyframes line {
     from {width: 0%;}
     to {width: 100%;}
@@ -143,6 +144,7 @@ header{
     font-size: 12px;
     font-weight: 600;
     color: white;
+    transition: 0.7s;
 }
 
 button:hover{
@@ -151,7 +153,6 @@ button:hover{
     color: black;
     transform: scale(100%);
     font-size: 14px;
-    transition: 0.7s;
 }
 
 button:active{

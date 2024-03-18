@@ -1,6 +1,7 @@
 
 const button = document.querySelector('.ok')
 
+//арифметические операции 
 button.addEventListener('click', (e) => {
     // e.preventDefault()
     let result = document.querySelector('.result')

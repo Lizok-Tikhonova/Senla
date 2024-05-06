@@ -29,47 +29,5 @@
 
     <a href="https://web.telegram.org" onclick="event.preventDefault()">Я ссылка без стандартного действия</a>
 
-
-    <script>
-        const containerColor = document.querySelector('.containerColor')
-        const form = document.querySelector('.form')
-        const inputs = document.querySelectorAll('input')
-
-        function changeColorText(color1, color2){
-            console.log(color1,color2)
-            let containerText = document.querySelector('.containerText')
-            setInterval(()=>{
-                if(containerText.style.color==color1) {
-                    containerText.style.color = color2;
-                    containerText.textContent = 'Изменение контента: ЦВЕТ 1'
-                } else {
-                    containerText.style.color = color1;
-                    containerText.textContent = 'Изменение контента: ЦВЕТ 2'
-                }
-            }, 2000)
-        }
-        changeColorText('blue', 'red')
-       
-        function Message(mess){
-            alert(mess)
-        }
-        
-        containerColor.addEventListener('mouseover',(e)=>{
-            containerColor.textContent = 'Наведение (попробуй нажать)'
-        })
-        containerColor.addEventListener('mouseout',(e)=>{
-            containerColor.textContent = 'Снятие курсора (попробуй нажать)'
-        })
-        
-        inputs.forEach((input) => {
-            input.addEventListener('focus', (e)=>{ 
-                input.style.outline = '2px solid red'
-            })
-            input.addEventListener('blur', (e)=>{
-                input.style.outline = ''
-            })
-        })
-
-    </script>
 </body>
 </html>

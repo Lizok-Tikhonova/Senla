@@ -82,7 +82,7 @@ inputs.forEach((input) => {
 
 
 
-////////////////Iteration 5 из HTML//////////////////
+////////////////Iteration 5//////////////////
 
 
 
@@ -174,3 +174,94 @@ for(let time of timeOfDay){
 
 
 
+
+
+
+//////////////// Iteration 6 //////////////////
+
+const url = window.location.href //текущий URL
+alert(`URL - ${url}`); 
+
+
+const editPage = document.querySelector('.editPage')
+// Добавление новой записи в историю
+editPage.addEventListener('click', () => {
+    if(editPage.textContent === 'Контакты'){
+        editPage.textContent = 'Главная'
+        window.history.pushState({page:'контакты'}, 'контакты', '/contact')
+        
+    } else {
+        editPage.textContent = 'Контакты' 
+        window.history.pushState({page:'главная'}, 'главная', '/about')
+    }
+})
+
+window.addEventListener('popstate', (event)=>{
+    if(event.state){
+        console.log(event.state.page);
+    }
+})
+
+// Получение истории
+function getHistory() {
+    return window.history;
+}
+const history = getHistory()
+console.log(history);
+
+// Навигация назад
+function goBack() {
+    window.history.back();
+}
+
+// Навигация вперед
+function goForward() {
+    window.history.forward();
+}
+
+// Переход на определённое количество шагов
+function goTo(steps) {
+    window.history.go(steps);
+}
+
+
+
+// Cookie
+document.cookie = "userId=123; max-age=3600"; // cookie будет удалено через 1 час
+
+// Перезапись cookie
+setInterval(() => {
+    let id = Math.round(Math.random() * 10000)
+    document.cookie = `userId=${id}; max-age=3600; sequre; `; 
+    alert(`Cookie были изменены, userId=${id}`)
+}, 30000);
+
+
+
+//LocalStorage
+
+const sendBtn = document.querySelector('.save')
+sendBtn.addEventListener('click', () => {
+    let text = document.querySelector('.text')
+    debugger
+    if(!text.value){
+        alert('Введите что-то')
+        return
+    } else {
+        let lastData = localStorage.getItem('data')
+        let updateData = lastData ? lastData + '\n' + text.value : text.value
+        localStorage.setItem('data', updateData)
+        alert('Данные успешно записаны')
+        text.value=''
+    }
+})
+
+const loadBtn = document.querySelector('.load')
+loadBtn.addEventListener('click', () => {
+    let data = localStorage.getItem('data')
+    if(data){
+        alert(localStorage.getItem('data'))
+    } 
+})
+
+// localStorage.clear()

@@ -1,0 +1,18 @@
+.form{
+    border: 5px lightgreen solid;
+}
+
+.symbol{
+    width: 2em;
+}
+
+.containerText{
+    color:red;
+    border:2px solid black; 
+    padding: 20px;
+}
+
+.containerColor{
+    background-color: lightcoral; 
+    padding: 20px;
+}

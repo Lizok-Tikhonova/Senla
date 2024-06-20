@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSBasic</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <button class="editPage">Контакты</button>
+
+    <div class="local" style="margin: 30px 0 30px 0;">
+        <textarea class="text"></textarea>
+        <button class="save">Сохранить</button>
+        <button class="load">Загрузить данные</button>
+    </div>
+    
+
+
+    <form class="form">
+        <h3>Арифметические операции с числами</h3>
+        <input type="number" placeholder="Первое число" class="num1">
+        <input type="text" placeholder="+-*/" class="symbol">
+        <input type="number" placeholder="Второе число" class="num2">
+        <button class="ok" type="reset">посчитать</button>
+        <p class="result" class="result">Результат = </p>
+    </form>
+
+    <div class="containerText">
+        Изменение контента
+    </div>
+
+    <div class="containerColor" onclick="Message('Ура, нажатие')">
+       КЛИК, НАВЕДЕНИЕ, ОТВЕДЕНИЕ
+    </div>
+
+    <a href="https://web.telegram.org" onclick="event.preventDefault()">Я ссылка без стандартного действия</a>
+
+</body>
+</html>

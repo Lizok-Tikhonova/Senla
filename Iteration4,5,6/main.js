@@ -228,14 +228,28 @@ function goTo(steps) {
 
 // Cookie
 document.cookie = "userId=123; max-age=3600"; // cookie будет удалено через 1 час
-
+document.cookie = "userName=Liza; max-age=3600"; // cookie будет удалено через 1 час
 // Перезапись cookie
 setInterval(() => {
     let id = Math.round(Math.random() * 10000)
-    document.cookie = `userId=${id}; max-age=3600; sequre; `; 
+    document.cookie = `userId=${id}; max-age=3600; secure; `; 
     alert(`Cookie были изменены, userId=${id}`)
 }, 30000);
 
+
+function getCookie(name) {
+    let cookie = document.cookie.split(';')
+    for (let i = 0; i < cookie.length; i++) {
+        let [key, value] = cookie[i].trim().split('=')
+        if (key === name) {
+            return value;
+        }
+    }
+    return null;
+}
+
+let userId = getCookie('userId');
+console.log(userId);  
 
 
 //LocalStorage

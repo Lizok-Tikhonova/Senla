@@ -233,7 +233,7 @@ document.cookie = "userName=Liza; max-age=3600"; // cookie будет удале
 setInterval(() => {
     let id = Math.round(Math.random() * 10000)
     document.cookie = `userId=${id}; max-age=3600; secure; `; 
-    alert(`Cookie были изменены, userId=${id}`)
+    // alert(`Cookie были изменены, userId=${id}`)
 }, 30000);
 
 
@@ -279,3 +279,47 @@ loadBtn.addEventListener('click', () => {
 })
 
 // localStorage.clear()
+
+
+
+
+/////////////// Iteration 7 ////////////////////
+
+function getRepos(userName){
+    return fetch(`https://api.github.com/users/${userName}/repos`)
+        .then(response => response.json())
+        .then(data=>{
+            const listRepos = document.querySelector('.listRepos')
+            data.forEach(rep => {
+                let li = document.createElement('li')
+                li.textContent = rep.name
+                listRepos.append(li)
+            })
+            return data
+        })
+        .catch((err)=> console.error('Произошла ошибка!', err))
+}
+
+const listRepRoma = getRepos('ab199000')
+console.log(listRepRoma);
+
+
+async function getRepositor(userName){
+    try{
+        const response = await fetch(`https://api.github.com/users/${userName}/repos`)
+        const listRep = await response.json()
+        const listRepos = document.querySelector('.listRepos')
+        listRep.forEach(rep => {
+            let li = document.createElement('li')
+            li.textContent = rep.name
+            listRepos.append(li)
+        })
+        return listRep
+    } catch(err){
+        console.error('Произошла ошибка!', err)
+    }
+    
+}
+
+// const listRepLiza = getRepositor('Lizok-Tikhonova')
+// console.log(listRepLiza);

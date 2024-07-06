@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App</title>
+</head>
+<body>
+    <div id="root"></div>
+    <nav>
+        <a href="./index.html" class="logo">
+            <strong>Sahalin</strong>Tur
+        </a>
+
+        <ul class="nav-list">
+            <li class="nav-list__item item--active">
+                <a href="#" class="nav-list__link a--active">Главная</a>
+            </li>
+            <li class="nav-list__item">
+                <a href="#" class="nav-list__link">Достопримечательности</a>
+            </li>
+            <li class="nav-list__item">
+                <a href="#" class="nav-list__link">Экскурсии</a>  
+            </li>
+            <li class="nav-list__item">
+                <a href="#" class="nav-list__link">Контакты</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="header__title">Добро пожаловать на Cахалин</h1>
+        <p class="header__description">Сахалинская область расположена на Дальнем Востоке Российской Федерации, у восточных берегов Евразийского материка в переходной зоне от континента к Тихому океану. Граничит с Камчатским, Хабаровским и Приморским краями, на юге - с Японией. Вы можете побывать в этих замечательных краях, заказав у нас экскурсию!</p>
+        <button class="header__button" type="button">Заказать экскурсию</button>
+    </header>
+    <main>
+        <div class="cardsAttractions">
+            <div class="cardsAttractions__card">
+                <img src="https://clck.ru/3BjGsg" alt="waterfall" class="card__img">
+                <h3 class="card__title">Черемшанский водопад</h3>
+            </div>
+            <div class="cardsAttractions__card">
+                <img src="https://clck.ru/3BjGqf" alt="lighthouse" class="card__img">
+                <h3 class="card__title">Маяк Анива</h3>
+            </div>
+            <div class="cardsAttractions__card">
+                <img src="https://clck.ru/3BjGuY" alt="volcano" class="card__img">
+                <h3 class="card__title">Вулкан Менделеева</h3>
+            </div>
+        </div>
+
+        <div class="infoSahal">
+            <section class="info">
+                <p class="about__desc"><strong>Сахалинская область</strong> – <strong><em>единственный в стране</em></strong> островной регион, расположенный на 87 островах и включающий в себя остров Сахалин с прилегающими к нему территориями островов Уш, Зенковича, Монерон, Тюлений и две гряды Курильских островов (Большой и Малой).
+                    Основным климатообразующим фактором на Сахалине служат окружающие его Охотское и Японское моря. Их влияние выражается в смягчении зимних холодов, особенно в прибрежных районах, в обилии зимних осадков, делающих остров одним из наиболее многоснежных районов России, в муссонном характере ветров и очень высокой влажности воздуха.
+                </p>
+            </section>
+            <section class="request">
+                <div class="request__desc">
+                    <h2 class="request__desc_title">Заказать экскурсию</h2>
+                    <p class="request__desc_slogan">Оформи заявку на экскурсию сейчас и получи <strong>специальную скидку <em>15%</em></strong>. Чтобы воспользоваться этим предложением, пожалуйста, заполните форму. Мы обязательно с вами свяжемся и предложим возможные экскурсии!</p>
+                </div>
+                <form action="" class="request__form">
+                    <label for="fname" class="fname-text">Имя:</label><br>
+                    <input type="text" id="fname" name="fname" class="fname" placeholder="имя"><br>
+    
+                    <label for="sname" class="fname-text">Фамилия:</label><br>
+                    <input type="text" id="sname" name="sname" class="sname" placeholder="фамилия"><br>
+    
+                    <label for="tel" class="tel-text">Телефон:</label><br>
+                    <input type="tel" id="tel" name="tel" class="tel" placeholder="+7 000 000 00 00"><br>
+    
+                    <label for="email" class="email-text">Почта:</label><br>
+                    <input type="email" id="email" name="email" class="email" placeholder="email@gmail.com"><br>
+    
+                    <label for="date" class="date-text">Выберите удобную дату:</label><br>
+                    <input type="date" id="date" name="date" class="date"><br>
+    
+                    <label for="date" class="date-text">Выберите город или воспользуйтесь поиском:</label><br>
+                    <input type="search" class="excursions__search" list="city" placeholder="Найти город">
+                    <datalist id="city">
+                        <option value="Холмск">
+                        <option value="Оха">
+                        <option value="Долинск">
+                    </datalist>
+    
+                    <div class="form_input_radio">
+                        <label for="radio" class="form_input_radio_label">Выберите способ передвижения:</label>
+                        <div class="form_input_radio__list" id="radio">
+                            <label><input type="radio" class="input_item_radio" name="new" value="Трансфер">Пешая</label>
+                            <label><input type="radio" class="input_item_radio" name="new" value="Аудиогид">Транспортная</label>
+                        </div>
+                    </div>
+                    <div class="request__form_buttons">
+                        <button type="reset" class="btnForm">Очистить</button>
+                        <button type="submit" class="btnForm">Отправить</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        
+    </main>
+</body>
+</html>
